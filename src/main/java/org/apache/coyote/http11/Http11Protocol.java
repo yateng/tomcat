@@ -132,7 +132,7 @@ public class Http11Protocol implements ProtocolHandler, MBeanRegistration {
 
     public void init() throws Exception {
         endpoint.setName(getName());  // http-端口
-        endpoint.setHandler(cHandler);/*org.apache.coyote.http11.Http11Protocol.Http11ConnectionHandler*/
+        endpoint.setHandler(cHandler);// org.apache.coyote.http11.Http11Protocol.Http11ConnectionHandler
 
         // Verify the validity of the configured socket factory
         try {
@@ -635,6 +635,9 @@ public class Http11Protocol implements ProtocolHandler, MBeanRegistration {
             this.protocol = proto;
         }
 
+        /* 
+         * 这儿开始处理请求
+         */
         public boolean process(Socket socket) {
             Http11Processor processor = null;
             try {

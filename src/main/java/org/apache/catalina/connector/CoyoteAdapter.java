@@ -179,9 +179,8 @@ public class CoyoteAdapter implements Adapter {
         }
 
         boolean comet = false;
-
+        System.out.println(request.getParameter("username")); // TODO 这儿是为了查看，post请求是如何处理body的参数的
         try {
-
             // Parse and set Catalina and configuration specific
             // request parameters
             if (postParseRequest(req, request, res, response)) {
